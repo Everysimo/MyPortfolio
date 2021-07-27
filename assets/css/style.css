@@ -89,6 +89,7 @@ body.dark-theme{
 .change-theme{
     font-size: 1.25rem;
     color: var(--title-color);
+    margin-bottom: -0.35rem;
     margin-right: var(--mb-1);
     cursor: pointer;
 }
@@ -188,7 +189,7 @@ img{
 .nav_toggle{
     color: var(--title-color);
     font-weight: var(--font-medium);
-
+    padding-top: var(--mb-0-5)
 }
 
 .nav_logo:hover{
@@ -316,7 +317,7 @@ img{
     margin-bottom: var(--mb-0-75);
 }
 
-.home_descritption{
+.home_description{
     margin-bottom: var(--mb-2);
 }
 
@@ -414,7 +415,7 @@ img{
 
 .about_info{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-bottom: var(--mb-2-5);
 }
 
@@ -861,6 +862,15 @@ img{
     padding: .25rem .5rem .5rem 0;
 }
 
+#contact_form-submit{
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 400;
+    font: var(--font-semi-bold);
+    box-shadow: none;
+    border: none;
+}
+
 /*======= FOOTER =======*/
 .footer {
     padding-top: 2rem;
@@ -1011,11 +1021,18 @@ img{
     }
 }
 
-/*----------MEDIUM DEVICES---------*/
-@media screen and (max-width:568px) {
-    .home_content{
-        grid-template-columns: max-content 1fr 1fr;
+@media screen and (max-width:768px) {
+    .about_info{
+        display: block;
     }
+    .button-flex {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/*----------MEDIUM DEVICES---------*/
+@media screen and (min-width:568px) {
 
     .home_data{
         grid-column: initial;
@@ -1032,7 +1049,7 @@ img{
     .project_container,
     .contact_container,
     .footer_container{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .qualification_sections{
@@ -1040,6 +1057,8 @@ img{
         grid-template-columns: .6fr;
         justify-content: center;
     }
+
+    
 }
 
 @media screen and (min-width:768px) {
@@ -1196,3 +1215,39 @@ img{
     } 
 }
 /*----------LARGE DEVICES---------*/
+@media screen and (min-width:1024) {
+    .home_blob{
+        width: 320px;
+    }
+    .home_social{
+        transform: translate3d(-6rem);
+    }
+
+    .services_container{
+        grid-template-columns: repeat(3,238px);
+    }
+
+    .portfolio_content{
+        column-gap: 5rem;
+    }
+    .swiper-portfolio-icon{
+        font-size: 3.5rem;
+    }
+    .swiper-button-prev{
+        left: -3-5rem;
+    }
+    .swiper-button-next{
+        right: -3-5rem;
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets{
+        bottom: -4.5rem;
+    }
+
+    .contact_form{
+        width: 460px;
+    }
+    .contact_inputs{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+

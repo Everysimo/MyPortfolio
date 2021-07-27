@@ -13,6 +13,10 @@
         <!--======================== CSS ========================-->
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <title>Simone Spera</title>
+
+        <!--======================== JQUERY ========================-->    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/lib/jquery.plugin.js"></script>
     </head>
 
     <body>
@@ -95,7 +99,7 @@
                     <div class="home_data">
                         <h1 class="home_title">Hi, I'am Simone</h1>
                         <h3 class="home_subtitle">Computer Science student at "Universit&aacute; di Salerno"</h3>
-                        <p class="home_descrtiption">I like giving all myself in everything i do, my motto "PLUS ULTRA, always pass your limits" </p>
+                        <p class="home_description">I like giving all myself in everything i do, my motto "PLUS ULTRA, always pass your limits" </p>
                         <a href="#contact" class="button button--flex">
                             Contact Me <i class="uil uil-message button_icon"></i> 
                         </a>
@@ -440,7 +444,7 @@
              <!--======================== PORTFOLIO ========================-->
              <section class="portfolio section" id="portfolio">
                  <h2 class="section_title">Portfolio</h2>
-                 <span class="section_subtitle">Most recent work</span>
+                 <span class="section_subtitle">Most recent works</span>
 
                  <div class="portfolio_container container swiper-container">
                      <div class="swiper-wrapper">
@@ -488,7 +492,7 @@
                  <div class="project_bg">
                      <div class="project_container container grid">
                          <div class="project_data">
-                             <h2 class="project_title">You have a ner project</h2>
+                             <h2 class="project_title">You have a new project?</h2>
                              <p class="project_description">Contact me now for a price quotation</p>
                              <a href="#contact" class="button button-flex button-white">
                                  Contact me
@@ -513,18 +517,7 @@
 
                             <div>
                                 <h3 class="contact_title">Call me</h3>
-                                <span class="contact_subtitle">331-3355612</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="container_information">
-                            <i class="uil uil-phone contact_icon"></i>
-
-                            <div>
-                                <h3 class="contact_title">Call me</h3>
-                                <span class="contact_subtitle">331-3355612</span>
+                                <span class="contact_subtitle">+39-3313355612</span>
                             </div>
                         </div>
                     </div>
@@ -535,7 +528,7 @@
 
                             <div>
                                 <h3 class="contact_title">Email</h3>
-                                <span class="contact_subtitle">simone.spera.13@gmail.com</span>
+                                <span class="contact_subtitle">simone.spera.job@gmail.com</span>
                             </div>
                         </div>
                     </div>
@@ -551,31 +544,31 @@
                         </div>
                     </div>
 
-                    <form action="" class="contact_form grid">
+                    <form class="contact_form grid" method="POST" onsubmit="return false" >
                         <div class="contact_inputs grid">
                             <div class="contact_content">
                                 <label for="" class="contact_label">Name</label>
-                                <input type="text" class="contact_input">
+                                <input type="text" class="contact_input" id="contact_form-name" required>
                             </div>
                             <div class="contact_content">
                                 <label for="" class="contact_label">Email</label>
-                                <input type="email" class="contact_input">
+                                <input type="email" class="contact_input" id="contact_form-email" required>
                             </div>
                         </div>
                         <div class="contact_content">
                             <label for="" class="contact_label">Project</label>
-                            <input type="text" class="contact_input">
+                            <input type="text" class="contact_input" id="contact_form-project" required>
                         </div>
                         <div class="contact_content">
                             <label for="" class="contact_label">Message</label>
-                            <textarea name="" id="" cols="0" rows="7" class="contact_input"></textarea>
+                            <textarea name="" cols="0" rows="7" class="contact_input" id="contact_form-message" required></textarea>
                         </div>
 
                         <div>
-                            <a href="" class="button button-flex">
+                            <button type="submit" class="button button-flex" id="contact_form-submit" onclick="submitForm(event)">
                                 Send Message
                                 <i class="uil uil-message button_icon"></i>
-                            </a>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -627,6 +620,9 @@
         
         <!--======================== SWIPER JS ========================-->
         <script src="js/swiper-bundle.min.js"></script>
+
+        <!--======================== SEND EMAIL FROM JAVASCRIPT ========================-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
 
         <!--======================== JAVASCRIPT ========================-->
         <script src="js/code.js"> </script>

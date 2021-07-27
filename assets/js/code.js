@@ -170,3 +170,54 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+/*==================== SEND EMAIL ====================*/ 
+function submitForm(event){
+    event.preventDefault();
+    var contactForm = document.querySelector('.contact_form');
+
+    //GET INPUT VALUES
+    let name = $('#contact_form-name').val();
+    let email = $('#contact_form-email').val();
+    let project = $('#contact_form-project').val();
+    let message = $('#contact_form-message').val();
+
+    if(name ===''||email ===''||project === '' || message===''){
+        alert("You have to compile all the fields")
+        return false
+    }
+
+    if(!validateEmail(email)){
+        alert("You have entered an invalid email address!")
+        return (false)
+    }
+    
+    contactForm.reset();
+
+    sendEmail(name,email,project,message)
+}
+
+function validateEmail(mail) 
+{
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
+    {
+        return (true)
+    }
+    return (false)
+}
+
+function sendEmail(name,email,project,message){
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: 'simone.spera.job@gmail.com',
+        Password: "xbkrhachvgwzawbx",
+        To: 'simone.spera.job@gmail.com',
+        From: 'simone.spera.job@gmail.com',
+        Subject: `${name} sent a message from SIMONE SPERA PORTFOLIO`,
+        Body: `Name: ${name} <br/>
+                Email: ${email} <br/>
+                Project: ${project} <br/>
+                Message: ${message} `,
+
+    }).then((message) => alert("Email succesfuly sent"))
+}
